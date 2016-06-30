@@ -8,8 +8,8 @@ module.exports = {
         path.resolve(__dirname, "src/index.js")
     ],
 
-    target: "node",
-    externals: [nodeExternals()],
+    // target: "node",
+    // externals: [nodeExternals()],
 
     output: {
         path: __dirname + "/assets",
@@ -24,9 +24,9 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: "node_modules/",
+                // exclude: "node_modules/",
                 loader: "babel"
-            }
+            },
         ]
     },
 

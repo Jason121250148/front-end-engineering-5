@@ -44,39 +44,30 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
-	module.exports = __webpack_require__(2);
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("webpack-dev-server/client?http://localhost:8080");
+	"use strict";
+
+	__webpack_require__(2);
+
+	console.log(2);
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	__webpack_require__(3);
-
-	(function () {
-	  return console.log("Success");
-	});
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(5)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -93,21 +84,21 @@
 	}
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(4)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  background: #0767b8;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  height: 100%;\n}\nbody {\n  font-size: 14px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.app {\n  flex: 1 0 auto;\n  width: 600px;\n  height: 400px;\n  display: flex;\n}\n.app > .container1,\n.app > .container2 {\n  flex: 1 0 50%;\n  display: flex;\n  flex-direction: column;\n}\n.app > .container1 > .content-top {\n  flex: 3 0 auto;\n  background: #0767b8;\n}\n.app > .container1 > .content-bottom {\n  flex: 1 0 auto;\n  border: 1px solid black;\n  background: orange;\n}\n.app > .container2 > .content-top {\n  flex: 3 0 auto;\n  background: green;\n}\n.app > .container2 > .content-bottom {\n  flex: 1 0 auto;\n  border: 1px solid black;\n  background: orange;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -162,7 +153,7 @@
 	};
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
